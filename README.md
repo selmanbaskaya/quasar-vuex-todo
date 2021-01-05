@@ -1,4 +1,4 @@
-# Todo app with Quasar & Vuex
+# ToDo's app with Quasar & Vuex
 
 ![](home.png)
 
