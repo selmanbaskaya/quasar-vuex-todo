@@ -1,1 +1,1 @@
-# quasar-vuex-todo
+# Todo app with Quasar & Vuex
