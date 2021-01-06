@@ -38,7 +38,7 @@
           flat
           round
           dense
-          color="primary"
+          color="purple-7"
           icon="edit"
         />
         <q-btn
