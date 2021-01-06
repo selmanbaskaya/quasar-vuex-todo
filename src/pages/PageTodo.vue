@@ -1,26 +1,56 @@
 <template>
   <q-page class="q-pa-md">
-    <q-list separator bordered>
+    <q-list v-if="Object.keys(tasksTodo).length" separator bordered>
       <task 
-        v-for="(task, key) in tasks"
+        v-for="(task, key) in tasksTodo"
         :key="key"
         :task="task"
         :id="key"
       >
-
       </task>
     </q-list>
+    <hr>
+    <q-list v-if="Object.keys(tasksCompleted).length" separator bordered>
+      <task 
+        v-for="(task, key) in tasksCompleted"
+        :key="key"
+        :task="task"
+        :id="key"
+      >
+      </task>
+    </q-list>
+
+    <div class="absolute-bottom text-center q-mb-lg">
+      <q-btn
+      @click="showAddTask = true"
+      round
+      color="primary"
+      size="24px"
+      icon="add"
+    />
+    </div>
+
+    <q-dialog v-model="showAddTask">
+      <add-task @close="showAddTask = false" />
+    </q-dialog>
+    
   </q-page>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 export default {
+  data() {
+    return {
+      showAddTask: false,
+    }
+  },
   computed: {
-    ...mapGetters('tasks', ['tasks'])
+    ...mapGetters('tasks', ['tasksTodo', 'tasksCompleted'])
   },
   components: {
-    'task': require('components/Tasks/Task.vue').default
+    'task': require('components/Tasks/Task.vue').default,
+    'add-task': require('components/Tasks/Modals/AddTask').default,
   }
 };
 </script>
