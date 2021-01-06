@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-# Awesome Todo (awesome-todo)
-=======
 # ToDo's app with Quasar & Vuex
->>>>>>> cfa9ff5c17aa030868759ced5420d49aaffe7d86
-
-A Quasar Framework app
+![](home.png)
 
 ## Install the dependencies
 ```bash
